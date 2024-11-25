@@ -217,7 +217,7 @@ initial_node = [node for node, degree in G.in_degree() if degree == 0][0]
 pos = nx.bfs_layout(G, start=initial_node)
 
 # Desenhar o grafo
-plt.figure()
+fig, ax = plt.subplots()
 
 options = {
     'with_labels': False,
@@ -230,5 +230,14 @@ options = {
 nx.draw_networkx(G, pos, **options)
 
 nx.draw_networkx_labels(G, pos, labels=node_labels, font_size=10)
+
+# Mostrar a legenda
+ax.text(0.02, 0.02,
+        'ES: tempo inicial mais cedo\n'
+        'EF: tempo final mais cedo\n'
+        'LS: tempo inicial mais tarde\n'
+        'LF: tempo final mais tarde\n'
+        'F: folga',
+        transform=ax.transAxes)
 
 plt.show()
