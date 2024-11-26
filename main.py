@@ -126,7 +126,7 @@ class Projeto:
 
 projeto = Projeto()
 
-with open('data.csv', newline='') as dados:
+with open('data.csv', newline='', encoding='utf-8') as dados:
     leitura = csv.reader(dados, delimiter=';')
     for linha in leitura:
         nome = linha[0]
