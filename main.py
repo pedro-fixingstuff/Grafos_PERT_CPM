@@ -126,6 +126,7 @@ class Projeto:
 
 projeto = Projeto()
 
+# Os dados no arquivo data.csv estão organizados em (nome do nó;duração;precedentes)
 with open('data.csv', newline='', encoding='utf-8') as dados:
     leitura = csv.reader(dados, delimiter=';')
     for linha in leitura:
